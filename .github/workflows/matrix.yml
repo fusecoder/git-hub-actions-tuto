@@ -11,20 +11,20 @@ jobs:
         exclude:
           - os: ubuntu-latest
             node-version: 6
-            is_ubuntu_8: true
+            is_ubuntu_8: "true"
           - os: macos-latest
             node-version: 8
 
     runs-on: ${{maxtrix.os}}
     env:
-      IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
+      IS_UBUNTU_8: ${{ matrix.is_ubuntu_8}}
     steps:
       - name: Log node node-version
         run: node -v
       
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node_version}}
+          node-version: ${{ matrix.node_version }}
 
       - name: Log node node-version
         run: node -v
