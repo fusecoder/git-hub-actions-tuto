@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello world"
+        timeout-minutes: 0
       - name: Multiple script
         run: |
           node -v
